@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family:'Times New Roman', Times, serif;
+    background-color: rgb(25, 29, 25);
+    color: white;
+    font-size: 15px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .section {
+        grid-template-columns: 1fr; /* Tylko jedna kolumna */
+    }
+
+    .pasekBoczny {
+        width: 100%;
+        position: static !important;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pasekBoczny ul {
+        display: flex; /* Menu poziome zamiast pionowego na telefonie */
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 1001;
+    }
+
+    .pasekBoczny ul li {
+        margin-top: 0 !important;
+        padding: 0.2rem !important;
+    }
+    .pasekBoczny ul li a{
+        display: flex;
+        flex-direction: column;
+        padding: 10% 0.2rem!important;
+    }
+
+    .tekstGlowny {
+        text-align: center;
+        width: 100% !important;
+    }
+    .drift {
+        flex-direction: column;
+    }
+    .drift div {
+        margin-bottom: 2rem !important;
+    }
+    .zdjecie {
+        order: 9 !important;
+    }
+}
+/*stylowanie nagłówka*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    align-items: center;
+    background-color: rgb(25, 29, 25);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Pozycja sticky sprawia że nagłówek jest zawsze na górze*/
+    top: 0; /* Ustawia nagłówek na górze strony */
+    z-index: 10000; /* Ustawia nagłówek na wierzchu stosu */
+}
+
+.logo h1{
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+}
+
+nav {
+    position: relative;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: gold;
+    margin: 4px 0;
+    transition: all 0.3s ease-in-out; /* dodaje animacje dla wszystkich zmian*/
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0%;
+    margin: 0%;
+    flex-direction: column;
+    background-color: rgba(25, 29, 25, 0.707);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+.menu li {
+    border: 1px solid gold;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: gold;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: rgba(93, 70, 13, 0.625);
+}
+
+nav:hover .menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*stylowanie głównej zawartości*/
+
+main {
+    display: flex;
+    background-color: rgba(93, 70, 13, 0.625);
+    padding: 0.5rem;
+}
+
+/*stylowanie paska bocznego*/
+
+.pasekBoczny {
+    display: flex;
+    justify-content: center;
+    order: 1;
+    position: sticky;
+    align-self: flex-start;
+    top: 60px;
+    z-index: 1000;
+    
+    background-color: rgba(93, 70, 13, 0.02);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+    
+}
+
+.pasekBoczny ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.pasekBoczny ul li {
+    padding: 1rem;
+    margin-top: 10px;
+    border-radius: 0px 20px;
+    cursor: pointer;
+    border: 2px solid rgba(169, 169, 169, 0.167);
+    opacity: 1;
+    transition: opacity 0.3s ease; 
+}
+
+.pasekBoczny ul li a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+.pasekBoczny ul li:hover {
+    background-color: rgba(25, 29, 25, 0.5);
+}
+
+/*stylowanie tekstu głównego*/
+
+.tekstGlowny {
+    z-index: 1000;
+    order: 2;
+    width: 88%;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+    align-self: flex-start;
+    top: 60px;
+}
+
+strong {
+    top: 60px;
+    color: gold;
+}
+
+.tekstGlowny h1 {
+    margin-top: 1rem;
+    font-size: 30px;
+    color: rgb(255, 255, 0);
+    text-align: center;
+}
+
+.form {
+    display: block;
+    font-size: 20px;
+    margin: 1rem auto;
+    background-color: #0a0a0aaa;
+    color: #cca43b;
+    border: 2px solid #cca43b;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 40px;
+    transition: all 0.3s ease;
+}
+.input {
+    display: block;
+    margin: 1rem auto;
+    background-color: rgba(37, 28, 28, 0.779);
+    color: #cca43b;
+    border: 2px solid #cca43b;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 20%;
+    transition: all 0.3s ease;
+}
+
+/* stylowanie stopki */
+
+footer {
+    background-color: rgba(25, 29, 25, 0.707);
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+footer ul {
+    margin-top: 1rem;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+footer img {
+    display: flex;
+    justify-content: center;
+}
+.social-media {
+    display: flex;
+    width: auto;
+    align-items: center;
+    text-align: center;   
+    height: 30px;
+    object-fit: cover;
+    margin: 0 0.5rem;
+}
+
+footer p {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: bold;
+    text-align: center;
+    order: 2;
+    flex-direction: column;
+}
+
+/*stylowanie tła i zdjęć*/
+
+.wideo-tlo {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  aspect-ratio: 16/9; /* Utrzymuje proporcje wideo */
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* stylowanie przycisków */
+
+button {
+    display: block;
+    margin: 0 auto;
+    background-color: #0a0a0a;
+    color: #cca43b;
+    border: 2px solid #cca43b;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 40px;
+    transition: all 0.3s ease;
+    flex-direction: flex-end;
+}
+
+button:hover {
+    background-color: #cca43b;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #cca43b;
+}
+button a {
+    text-decoration: none;
+    color: inherit;
+}
+
