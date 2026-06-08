@@ -14,6 +14,10 @@ body {
     position: relative;
 }
 
+
+
+/*Stylowanie dla urządzeń mobilnych*/
+
 @media (max-width: 768px) {
     .section {
         grid-template-columns: 1fr; /* Tylko jedna kolumna */
@@ -60,6 +64,9 @@ body {
         order: 9 !important;
     }
 }
+
+
+
 /*stylowanie nagłówka*/
 
 header {
@@ -137,6 +144,9 @@ nav:hover .menu {
     visibility: visible;
 }
 
+
+
+
 /*stylowanie głównej zawartości*/
 
 main {
@@ -144,6 +154,9 @@ main {
     background-color: rgba(93, 70, 13, 0.625);
     padding: 0.5rem;
 }
+
+
+
 
 /*stylowanie paska bocznego*/
 
@@ -185,6 +198,9 @@ main {
 .pasekBoczny ul li:hover {
     background-color: rgba(25, 29, 25, 0.5);
 }
+
+
+
 
 /*stylowanie tekstu głównego*/
 
@@ -236,6 +252,10 @@ strong {
     transition: all 0.3s ease;
 }
 
+
+
+
+
 /* stylowanie stopki */
 
 footer {
@@ -285,6 +305,9 @@ footer p {
     flex-direction: column;
 }
 
+
+
+
 /*stylowanie tła i zdjęć*/
 
 .wideo-tlo {
@@ -295,6 +318,9 @@ footer p {
   object-fit: cover;
   z-index: 1;
 }
+
+
+
 
 /* stylowanie przycisków */
 
