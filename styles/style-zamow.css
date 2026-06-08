@@ -239,6 +239,7 @@ strong {
     padding: 15px 40px;
     transition: all 0.3s ease;
 }
+
 .input {
     display: block;
     margin: 1rem auto;
@@ -248,10 +249,13 @@ strong {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 5px;
+    padding: 15px 15px; 
+    width: 80%;               
+    max-width: 500px;         
+    box-sizing: border-box;  
+    font-size: 20px;          
     transition: all 0.3s ease;
 }
-
 
 
 
