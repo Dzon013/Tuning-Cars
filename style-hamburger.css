@@ -53,6 +53,7 @@ body {
     .tekstGlowny {
         text-align: center;
         width: 100% !important;
+        flex-direction: column;
     }
     .drift {
         flex-direction: column;
